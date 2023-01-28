@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dealgetherservice-dev-83907-authRole",
+      "UnauthRoleArn": "arn:aws:iam::033949342616:role/amplify-dealgetherservice-dev-83907-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::033949342616:role/amplify-dealgetherservice-dev-83907-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-dealgetherservice-dev-83907-deployment",
+      "UnauthRoleName": "amplify-dealgetherservice-dev-83907-unauthRole",
+      "StackName": "amplify-dealgetherservice-dev-83907",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:033949342616:stack/amplify-dealgetherservice-dev-83907/3c25eea0-9a30-11ed-b7ff-0248f3d3c8ac",
+      "AmplifyAppId": "d32j14zp4grel5"
+    },
+    "categories": {
+      "auth": {
+        "dealgetherservice": {}
+      }
+    }
+  }
+}
