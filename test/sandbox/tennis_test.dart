@@ -5,11 +5,31 @@ void main()
 {
   group('tennisCalculator', () {
     test('should be able to init with score', () {
-      var actual = tennisCalculator(
-        playerA: 1,
-        playerB: 1
+      var actual = TennisCalculator.build();
+
+      expect(actual.playerAScore, Score.Love);
+      expect(actual.playerBScore, Score.Love);
+    });
+
+    test('should be able to init with score', () {
+      var actual = TennisCalculator.build(
+        playerAScore: Score.Fifteen,
+        playerBScore: Score.Thirty,
       );
-      expect(actual, 2);
+
+      expect(actual.playerAScore, Score.Fifteen);
+      expect(actual.playerBScore, Score.Thirty);
+      expect(actual, const InitialTennisGame(
+          playerAScore: Score.Fifteen,
+          playerBScore: Score.Thirty,
+      ));
+    });
+
+    test('equality', () {
+      expect(
+        const InitialTennisGame(playerAScore: Score.Love, playerBScore: Score.Love),
+        const InitialTennisGame(playerAScore: Score.Love, playerBScore: Score.Love)
+      );
     });
   });
 }
