@@ -7,8 +7,10 @@ void main()
     test('should be able to init with score', () {
       var actual = TennisCalculator.build();
 
-      expect(actual.playerAScore, Score.Love);
-      expect(actual.playerBScore, Score.Love);
+      expect(actual, const InitialTennisGame(
+        playerAScore: Score.Love,
+        playerBScore: Score.Love,
+      ));
     });
 
     test('should be able to init with score', () {
@@ -17,8 +19,6 @@ void main()
         playerBScore: Score.Thirty,
       );
 
-      expect(actual.playerAScore, Score.Fifteen);
-      expect(actual.playerBScore, Score.Thirty);
       expect(actual, const InitialTennisGame(
           playerAScore: Score.Fifteen,
           playerBScore: Score.Thirty,
