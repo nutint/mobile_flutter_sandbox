@@ -31,10 +31,10 @@ class TennisCalculator {
   }
 
   static PlayerAAdvantageTennisGame buildPlayerAAdvantage() =>
-      const PlayerAAdvantageTennisGame();
+    const PlayerAAdvantageTennisGame();
 
   static PlayerBAdvantageTennisGame buildPlayerBAdvantage() =>
-      const PlayerBAdvantageTennisGame();
+    const PlayerBAdvantageTennisGame();
 
   static PlayerAWonTennisGame buildPlayerAWon() => const PlayerAWonTennisGame();
   static PlayerBWonTennisGame buildPlayerBWon() => const PlayerBWonTennisGame();
