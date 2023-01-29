@@ -17,5 +17,8 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Generate mocks
+        run: flutter pub run build_runner build
+
       - name: Test
         run: flutter test
