@@ -2,9 +2,16 @@ import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:my_app/amplifyconfiguration.dart';
 
-class AmplifyHelper {
+class IAmplifyHelper {
+  const IAmplifyHelper();
+
+  Future<void> configureAmplify() async {}
+}
+
+class AmplifyHelper extends IAmplifyHelper {
   const AmplifyHelper();
 
+  @override
   Future<void> configureAmplify() async {
     try {
       final auth = AmplifyAuthCognito();

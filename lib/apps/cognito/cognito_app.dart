@@ -3,9 +3,11 @@ import 'package:my_app/apps/cognito/pages/login_page.dart';
 import 'package:my_app/drivers/amplify/amplify_helper.dart';
 
 class CognitoApp extends StatefulWidget {
+  final IAmplifyHelper amplifyHelper;
+
   const CognitoApp({
     super.key,
-    required AmplifyHelper amplifyHelper
+    required this.amplifyHelper
   });
 
   @override
@@ -13,6 +15,7 @@ class CognitoApp extends StatefulWidget {
 }
 
 class _CognitoAppState extends State<CognitoApp> {
+
   @override
   void initState() {
     super.initState();
@@ -20,8 +23,7 @@ class _CognitoAppState extends State<CognitoApp> {
   }
 
   Future<void> _configureAmplify() async {
-    final amplifyHelper = AmplifyHelper();
-    amplifyHelper.configureAmplify();
+    widget.amplifyHelper.configureAmplify();
   }
 
   @override
