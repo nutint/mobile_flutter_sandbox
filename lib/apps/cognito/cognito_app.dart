@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:amplify_flutter/amplify_flutter.dart';
-import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
-import 'package:my_app/amplifyconfiguration.dart';
 import 'package:my_app/apps/cognito/pages/login_page.dart';
+import 'package:my_app/drivers/amplify/amplify_helper.dart';
 
 class CognitoApp extends StatefulWidget {
-  const CognitoApp({super.key});
+  const CognitoApp({
+    super.key,
+    required AmplifyHelper amplifyHelper
+  });
 
   @override
   State<CognitoApp> createState() => _CognitoAppState();
@@ -19,26 +20,8 @@ class _CognitoAppState extends State<CognitoApp> {
   }
 
   Future<void> _configureAmplify() async {
-    try {
-      final auth = AmplifyAuthCognito();
-      await Amplify.addPlugin(auth);
-      Amplify.configure(amplifyconfig);
-      print('Amplify configuration done');
-
-      final userSignedIn = await isUserSignedIn();
-      print('isUserSignedIn = $userSignedIn');
-      if(userSignedIn) {
-        await Amplify.Auth.getCurrentUser();
-      }
-    } on Exception catch (e) {
-      print('An error happen during configure amplify');
-    }
-  }
-
-  Future<bool> isUserSignedIn() async {
-    final result = await Amplify.Auth.fetchAuthSession();
-
-    return result.isSignedIn;
+    final amplifyHelper = AmplifyHelper();
+    amplifyHelper.configureAmplify();
   }
 
   @override
