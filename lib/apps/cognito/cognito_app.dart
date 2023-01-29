@@ -24,9 +24,21 @@ class _CognitoAppState extends State<CognitoApp> {
       await Amplify.addPlugin(auth);
       Amplify.configure(amplifyconfig);
       print('Amplify configuration done');
+
+      final userSignedIn = await isUserSignedIn();
+      print('isUserSignedIn = $userSignedIn');
+      if(userSignedIn) {
+        await Amplify.Auth.getCurrentUser();
+      }
     } on Exception catch (e) {
       print('An error happen during configure amplify');
     }
+  }
+
+  Future<bool> isUserSignedIn() async {
+    final result = await Amplify.Auth.fetchAuthSession();
+
+    return result.isSignedIn;
   }
 
   @override
