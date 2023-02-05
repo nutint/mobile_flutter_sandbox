@@ -7,6 +7,10 @@ class IAmplifyHelper {
   const IAmplifyHelper();
 
   Future<void> configureAmplify() async {}
+
+  String getText() { return "Base"; }
+
+  void login() {}
 }
 
 class AmplifyHelper extends IAmplifyHelper {
@@ -17,9 +21,14 @@ class AmplifyHelper extends IAmplifyHelper {
     try {
       final auth = AmplifyAuthCognito();
       final analyticsPlugin = AmplifyAnalyticsPinpoint();
+
       await Amplify.addPlugin(auth);
+      print("Auth plugin added");
       await Amplify.addPlugin(analyticsPlugin);
+
+      print("Analytics plugin added");
       Amplify.configure(amplifyconfig);
+
       print('Amplify configuration done');
 
       final userSignedIn = await isUserSignedIn();

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/drivers/amplify/amplify_helper.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -8,7 +10,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext buildContext) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login"),
+        title: Text(Provider.of<IAmplifyHelper>(buildContext).getText()),
       ),
       body: Center(
         child: Column(
