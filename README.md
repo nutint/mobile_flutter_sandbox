@@ -20,3 +20,24 @@ samples, guidance on mobile development, and a full API reference.
   ```shell
   $ open -a Simulator
   ```
+
+## Run unit tests
+```shell
+# Generate mock code
+$ flutter pub run build_runner build
+
+# Running unit testing
+$ flutter test
+```
+
+## Analytics (AWS Pinpoint)
+* Useful links
+  ```text
+  Pinpoint URL to track events https://ap-southeast-1.console.aws.amazon.com/pinpoint/home/?region=ap-southeast-1#/apps/ecebc0bc54324093b689b67f83eb1b55/analytics/overview
+  Hosted UI Endpoint: https://rlc6kgu2jfaa-dev.auth.ap-southeast-1.amazoncognito.com/
+  Test Your Hosted UI Endpoint: https://rlc6kgu2jfaa-dev.auth.ap-southeast-1.amazoncognito.com/login?response_type=code&client_id=73v07s38sk2be1eeegc10eivs&redirect_uri=dealgether://
+  ```
+* To access to analytics console
+  ```shell
+  $ amplify console analytics
+  ```

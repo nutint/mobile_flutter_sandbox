@@ -1,4 +1,10 @@
 {
+  "analytics": {
+    "dealgetherservice": {
+      "providerPlugin": "awscloudformation",
+      "service": "Pinpoint"
+    }
+  },
   "auth": {
     "dealgetherservice": {
       "customAuth": false,

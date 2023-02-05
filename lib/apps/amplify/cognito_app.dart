@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/apps/cognito/pages/login_page.dart';
+import 'package:my_app/apps/amplify/pages/login_page.dart';
 import 'package:my_app/drivers/amplify/amplify_helper.dart';
 
-class CognitoApp extends StatefulWidget {
+class AmplifyApp extends StatefulWidget {
   final IAmplifyHelper amplifyHelper;
 
-  const CognitoApp({
+  const AmplifyApp({
     super.key,
     required this.amplifyHelper
   });
 
   @override
-  State<CognitoApp> createState() => _CognitoAppState();
+  State<AmplifyApp> createState() => _AmplifyAppState();
 }
 
-class _CognitoAppState extends State<CognitoApp> {
+class _AmplifyAppState extends State<AmplifyApp> {
 
   @override
   void initState() {

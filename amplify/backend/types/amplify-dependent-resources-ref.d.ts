@@ -1,4 +1,11 @@
 export type AmplifyDependentResourcesAttributes = {
+  "analytics": {
+    "dealgetherservice": {
+      "Id": "string",
+      "Region": "string",
+      "appName": "string"
+    }
+  },
   "auth": {
     "dealgetherservice": {
       "AppClientID": "string",

@@ -9,6 +9,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "52.0.0"
+  amplify_analytics_pinpoint:
+    dependency: "direct main"
+    description:
+      name: amplify_analytics_pinpoint
+      sha256: f01f9268dc859ef4ca562bda76c67bd162d595089940cdd8054dfaa881cf0c0c
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.12"
+  amplify_analytics_pinpoint_android:
+    dependency: transitive
+    description:
+      name: amplify_analytics_pinpoint_android
+      sha256: "1b0fb62c99ce1399ff6802625676de85cd8c932e746b0139a83f4ed56f93b045"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.12"
+  amplify_analytics_pinpoint_ios:
+    dependency: transitive
+    description:
+      name: amplify_analytics_pinpoint_ios
+      sha256: df48e9f85ceaf776e3677dc8d655597c84d57dec66a58a26a803a404a05700a8
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.12"
   amplify_auth_cognito:
     dependency: "direct main"
     description:

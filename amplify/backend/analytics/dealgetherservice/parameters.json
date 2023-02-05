@@ -1,0 +1,21 @@
+{
+    "appName": "dealgetherservice",
+    "roleName": "pinpointLambdaRole4060653d",
+    "cloudformationPolicyName": "cloudformationPolicy4060653d",
+    "cloudWatchPolicyName": "cloudWatchPolicy4060653d",
+    "pinpointPolicyName": "pinpointPolicy4060653d",
+    "authPolicyName": "pinpoint_amplify_4060653d",
+    "unauthPolicyName": "pinpoint_amplify_4060653d",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}
