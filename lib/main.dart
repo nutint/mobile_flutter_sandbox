@@ -10,7 +10,7 @@ void main() {
       providers: [
         Provider<IAmplifyHelper>.value(value: amplifyHelper)
       ],
-      child: const AmplifyApp(amplifyHelper: amplifyHelper),
+      child: const AmplifyApp(),
     )
   );
 }

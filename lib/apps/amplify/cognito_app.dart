@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/apps/amplify/pages/login_page.dart';
 import 'package:my_app/drivers/amplify/amplify_helper.dart';
+import 'package:provider/provider.dart';
 
 class AmplifyApp extends StatefulWidget {
-  final IAmplifyHelper amplifyHelper;
-
   const AmplifyApp({
     super.key,
-    required this.amplifyHelper
   });
 
   @override
@@ -23,7 +21,7 @@ class _AmplifyAppState extends State<AmplifyApp> {
   }
 
   Future<void> _configureAmplify() async {
-    widget.amplifyHelper.configureAmplify();
+    await context.read<IAmplifyHelper>().configureAmplify();
   }
 
   @override

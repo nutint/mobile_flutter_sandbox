@@ -21,7 +21,7 @@ void main() {
         providers: [
           Provider<IAmplifyHelper>.value(value: mockedAmplifyHelper)
         ],
-        child: AmplifyApp(amplifyHelper: mockedAmplifyHelper),
+        child: const AmplifyApp(),
       )
     );
     
