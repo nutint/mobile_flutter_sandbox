@@ -52,9 +52,8 @@ class AmplifyHelper extends IAmplifyHelper {
   @override
   Future<void> login() async {
     try {
-      final result = await Amplify.Auth.signIn(
-          username: "username",
-          password: "password");
+      await Amplify.Auth.signInWithWebUI(
+        provider: AuthProvider.apple);
 
       final event = AnalyticsEvent("Login Success");
       Amplify.Analytics.recordEvent(event: event);
