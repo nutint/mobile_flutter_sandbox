@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/drivers/amplify/amplify_helper.dart';
 import 'package:provider/provider.dart';
@@ -15,18 +14,18 @@ class LoginPage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
+          children: const <Widget>[],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _login,
+        onPressed: () => _login(buildContext),
         tooltip: 'Login',
         child: const Icon(Icons.person),
       ),
     );
   }
 
-  void _login() {
-    print('Login');
+  void _login(BuildContext buildContext) {
+    Provider.of<IAmplifyHelper>(buildContext, listen: false).login();
   }
 }
