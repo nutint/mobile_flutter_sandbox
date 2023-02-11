@@ -10,7 +10,7 @@ class IAmplifyHelper {
 
   String getText() { return "Base"; }
 
-  void login() {}
+  Future<void> login() async {}
 }
 
 class AmplifyHelper extends IAmplifyHelper {
@@ -47,5 +47,14 @@ class AmplifyHelper extends IAmplifyHelper {
     final result = await Amplify.Auth.fetchAuthSession();
 
     return result.isSignedIn;
+  }
+
+  @override
+  Future<void> login() async {
+    final result = await Amplify.Auth.signIn(
+      username: "username",
+      password: "password");
+
+    print(result);
   }
 }
