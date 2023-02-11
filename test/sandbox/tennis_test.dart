@@ -69,6 +69,20 @@ void main() {
 
         expect(actual, const PlayerBWonTennisGame());
       });
+
+      test('abc', () {
+        final energyTotal = 3298990;
+        final day = 22;
+        final hour = 21;
+        final min = 49;
+
+        final numberOfHours = day * 24;
+        final numberOfMins = (numberOfHours + hour) * 60;
+        final numberOfSeconds = (numberOfMins + min) * 60;
+
+        final energyPerSeconds = energyTotal / numberOfSeconds;
+        print(energyPerSeconds);
+      });
     });
   });
 }

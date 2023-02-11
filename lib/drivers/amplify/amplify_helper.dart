@@ -51,10 +51,16 @@ class AmplifyHelper extends IAmplifyHelper {
 
   @override
   Future<void> login() async {
-    final result = await Amplify.Auth.signIn(
-      username: "username",
-      password: "password");
+    try {
+      final result = await Amplify.Auth.signIn(
+          username: "username",
+          password: "password");
 
-    print(result);
+      final event = AnalyticsEvent("Login Success");
+      Amplify.Analytics.recordEvent(event: event);
+    } on AmplifyException {
+      final event = AnalyticsEvent("Login failed");
+      Amplify.Analytics.recordEvent(event: event);
+    }
   }
 }
