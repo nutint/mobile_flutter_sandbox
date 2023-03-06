@@ -52,9 +52,10 @@ class AmplifyHelper extends IAmplifyHelper {
   @override
   Future<void> login() async {
     try {
-      await Amplify.Auth.signInWithWebUI(
-        provider: AuthProvider.apple);
+      var result = await Amplify.Auth.signInWithWebUI(
+        provider: AuthProvider.facebook);
 
+      print("result: $result");
       final event = AnalyticsEvent("Login Success");
       Amplify.Analytics.recordEvent(event: event);
     } on AmplifyException {
